@@ -163,10 +163,9 @@
   <main>
     <header>
       <h1><span class="accent">Robinette Ranch</span> Expense Tracking</h1>
-      <!-- Replaced with a random quote from dallastvshow.com when the page opens -->
       <blockquote class="quote">
-        <p id="quote-text">“Once you get rid of integrity, the rest is a piece of cake.”</p>
-        <cite><span id="quote-who">J.R. Ewing</span>, <em>Dallas</em></cite>
+        <p>“I don't get ulcers, I give 'em.”</p>
+        <cite>J.R. Ewing, <em>Dallas</em></cite>
       </blockquote>
     </header>
 
@@ -302,22 +301,6 @@
     let previewUrl = null;
 
     if (!SHEET_URL) document.getElementById('setup-notice').hidden = false;
-
-    // ----- A different Dallas quote each visit (the J.R. line stays if it can't load) -----
-    async function loadQuote() {
-      if (!SHEET_URL) return;
-      try {
-        const response = await fetch(SHEET_URL + '?action=quote');
-        const result = await response.json();
-        if (!result.ok || !result.quote) return;
-        document.getElementById('quote-text').textContent = '“' + result.quote + '”';
-        document.getElementById('quote-who').textContent = result.who || 'Dallas';
-      } catch (err) {
-        // keep the quote that's already showing
-      }
-    }
-    loadQuote();
-
     function today() {
       const d = new Date();
       const pad = function (n) { return String(n).padStart(2, '0'); };
