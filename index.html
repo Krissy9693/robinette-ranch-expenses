@@ -69,8 +69,10 @@
     }
     h2 { font-family: "Rye", serif; font-weight: 400; }
     .field { margin-bottom: 18px; }
-    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-    @media (max-width: 420px) { .row { grid-template-columns: 1fr; } }
+    .row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; }
+    .row .field { min-width: 0; }
+    /* Phones: date and amount each get a full-width line */
+    @media (max-width: 560px) { .row { grid-template-columns: 1fr; gap: 0; } }
 
     label, .label { display: block; font-weight: 600; margin-bottom: 6px; }
     .hint { font-weight: 400; color: var(--muted); font-size: 15px; }
@@ -85,6 +87,9 @@
       min-height: 48px;
     }
     textarea { min-height: 96px; resize: vertical; }
+    /* iPhone draws date boxes wider than their space unless told otherwise */
+    input[type="date"] { -webkit-appearance: none; appearance: none; display: block; min-width: 0; text-align: left; }
+    input[type="date"]::-webkit-date-and-time-value { text-align: left; }
     input:focus, select:focus, textarea:focus {
       outline: 3px solid var(--brand-soft);
       border-color: var(--brand);
