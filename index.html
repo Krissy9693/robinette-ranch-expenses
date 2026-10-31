@@ -211,25 +211,42 @@
         <label for="category">Tax category <span class="required">*</span></label>
         <select id="category" name="category" required>
           <option value="">Choose a category</option>
-          <option>Advertising &amp; marketing</option>
-          <option>Bank &amp; merchant fees</option>
-          <option>Car &amp; truck expenses</option>
-          <option>Contract labor</option>
-          <option>Education &amp; training</option>
-          <option>Equipment</option>
-          <option>Insurance</option>
-          <option>Legal &amp; professional services</option>
-          <option>Meals (business)</option>
-          <option>Office expenses</option>
-          <option>Phone &amp; internet</option>
-          <option>Postage &amp; shipping</option>
-          <option>Rent or lease</option>
-          <option>Repairs &amp; maintenance</option>
-          <option>Software &amp; subscriptions</option>
-          <option>Supplies</option>
-          <option>Taxes &amp; licenses</option>
-          <option>Travel</option>
-          <option>Utilities</option>
+          <!-- Names follow the farm expense lines on IRS Schedule F -->
+          <optgroup label="Most used">
+            <option>Supplies</option>
+            <option>Gasoline, fuel &amp; oil</option>
+          </optgroup>
+          <optgroup label="Livestock &amp; crops">
+            <option>Feed</option>
+            <option>Veterinary, breeding &amp; medicine</option>
+            <option>Seeds &amp; plants</option>
+            <option>Fertilizers &amp; lime</option>
+            <option>Chemicals (spray, pest &amp; weed control)</option>
+          </optgroup>
+          <optgroup label="Equipment &amp; vehicles">
+            <option>Repairs &amp; maintenance</option>
+            <option>Car &amp; truck expenses</option>
+            <option>Custom hire (machine work)</option>
+            <option>Rent or lease: machinery &amp; equipment</option>
+            <option>Freight &amp; trucking</option>
+          </optgroup>
+          <optgroup label="Land &amp; buildings">
+            <option>Rent or lease: land &amp; animals</option>
+            <option>Utilities</option>
+            <option>Storage &amp; warehousing</option>
+            <option>Conservation (soil &amp; water)</option>
+          </optgroup>
+          <optgroup label="Labor">
+            <option>Labor hired</option>
+            <option>Employee benefits</option>
+          </optgroup>
+          <optgroup label="Business costs">
+            <option>Insurance</option>
+            <option>Taxes &amp; licenses</option>
+            <option>Interest</option>
+            <option>Legal &amp; professional services</option>
+            <option>Office, phone &amp; internet</option>
+          </optgroup>
           <option value="Other">Other</option>
         </select>
       </div>
